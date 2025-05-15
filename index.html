@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadlift Research Study</title>
+  <link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+
+  <header>
+    <h1>Join Our Research Study</h1>
+    <p>Help us with cutting-edge research and get rewarded for your time!</p>
+    <p>A collaborative effort between Berea College's Department of Health & Human Performance and Eastern Kentucky University's Department of Applied Human Sciences</p>
+  </header>
+
+  <div class="main-content">
+    <div class="left-side">
+
+      <section>
+        <h2>Sign Up for More Information</h2>
+        <form action="/info" method="POST">
+          <label>Name:<br />
+            <input type="text" name="name" required />
+          </label><br />
+          <label>Email:<br />
+            <input type="email" name="email" required />
+          </label><br />
+          <label>Comments:<br />
+            <textarea name="comments"></textarea>
+          </label><br />
+          <button type="submit">Send Info</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Sign Up to Participate</h2>
+        <form action="/participate" method="POST">
+          <label>Name:<br />
+            <input type="text" name="name" required />
+          </label><br />
+          <label>Email:<br />
+            <input type="email" name="email" required />
+          </label><br />
+          <label>Phone:<br />
+            <input type="tel" name="phone" />
+          </label><br />
+          <label>Availability:<br />
+            <textarea name="availability"></textarea>
+          </label><br />
+          <button type="submit">Join the Study</button>
+        </form>
+      </section>
+
+    </div>
+
+    <div class="right-side">
+      <img src="hhp.JPG" alt="Deadlift Research Image">
+    </div>
+  </div>
+
+</body>
+</html>
