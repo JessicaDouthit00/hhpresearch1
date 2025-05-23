@@ -1,106 +1,110 @@
 /* Set pale blue background + navy text */
 body {
-    font-family: Arial, sans-serif;
-    background: #e6f2ff; /* pale blue */
-    color: #001f3f; /* navy */
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Header styling */
-  header {
-    background-color: #001f3f; /* navy */
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Two-column layout */
+  font-family: Arial, sans-serif;
+  background: #e6f2ff; /* pale blue */
+  color: #001f3f; /* navy */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #001f3f; /* navy */
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Two-column layout */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 140px); /* subtract header height */
+  gap: 2rem;
+}
+
+/* Left side (forms) */
+.left-side {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Right side (images stacked vertically) */
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  gap: 20px; /* Space between the two images */
+}
+
+.right-side img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form sections */
+section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #001f3f; /* navy */
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
   .main-content {
-    display: flex;
-    flex-direction: row;
-    min-height: calc(100vh - 140px); /* subtract header height */
+    flex-direction: column;
   }
-  
-  /* Left side (forms) */
-  .left-side {
-    flex: 1;
-    padding: 2rem;
-  }
-  
-  /* Right side (image) */
+
   .right-side {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    display: none;
   }
-  
-  .right-side img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  
-  /* Form sections */
-  section {
-    background: white;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    color: #001f3f; /* navy */
-    margin-bottom: 1rem;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 0.75rem;
-    font-weight: bold;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  form button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 900px) {
-    .main-content {
-      flex-direction: column;
-    }
-  
-    .right-side {
-      display: none;
-    }
-  }
+}
+
   
