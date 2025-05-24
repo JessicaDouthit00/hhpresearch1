@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deadlift Research Study</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
 
@@ -20,26 +20,27 @@
 
   <div class="main-content">
     <div class="left-side">
+
       <section>
         <h2>Sign Up to Participate:</h2>
-        <form action="https://revisedbackend.onrender.com/submit" method="POST">
+        <form action="https://script.google.com/macros/s/AKfycbz4-2o09XbKSRBPIEPZow85g7L4yBAkH8-Zai2QrvumiNOXMtYoXLvLFdattCmqWoLC/exec" method="POST" id="signupForm">
           <label>Name:<br />
             <input type="text" name="name" required />
           </label><br />
           <label>Email:<br />
             <input type="email" name="email" required />
           </label><br />
-          <label>How long will you be here? (e.g. all summer, until end of may term, until end of summer term)</label><br />
-          <label>When generally works for you? (e.g. weekends, Tuesdays, evenings)</label><br />
-          <textarea name="message"></textarea><br />
-          <input type="hidden" name="form_type" value="info" />
+          <label>How long will you be here? (e.g. all summer, until end of may term, until end of summer term)<br />
+          </label>When generally works for you? (e.g. weekends, Tuesdays, evenings) <br />
+            <textarea name="message"></textarea>
+          </label><br />
           <button type="submit">Submit</button>
         </form>
       </section>
 
       <section>
         <h2>Seeking more information?</h2>
-        <form action="https://revisedbackend.onrender.com/submit" method="POST">
+        <form action="https://script.google.com/macros/s/AKfycbz4-2o09XbKSRBPIEPZow85g7L4yBAkH8-Zai2QrvumiNOXMtYoXLvLFdattCmqWoLC/exec" method="POST" id="infoForm">
           <label>Name:<br />
             <input type="text" name="name" required />
           </label><br />
@@ -52,19 +53,62 @@
           <label>Additional Comments:<br />
             <textarea name="message"></textarea>
           </label><br />
-          <input type="hidden" name="form_type" value="participant" />
           <button type="submit">Submit</button>
         </form>
       </section>
+
     </div>
 
     <div class="right-side">
-      <img src="clear.JPG" alt="Bombsuit Research Image 2" class="top-image">
-      <img src="new.JPG" alt="Bombsuit Research Image" class="bottom-image">
+      <img src="lll.JPG" alt="Bombsuit Research Image 2">
+      <img src="new.JPG" alt="Bombsuit Research Image">
     </div>
   </div>
 
+  <script>
+    // AJAX submit for signupForm
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(form))
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.result === "success") {
+          alert('Thanks for signing up!');
+          form.reset();
+        } else {
+          alert('Submission failed: ' + data.message);
+        }
+      })
+      .catch(() => alert('Submission failed.'));
+    });
+
+    // AJAX submit for infoForm
+    document.getElementById('infoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(form))
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.result === "success") {
+          alert('Thanks for your inquiry!');
+          form.reset();
+        } else {
+          alert('Submission failed: ' + data.message);
+        }
+      })
+      .catch(() => alert('Submission failed.'));
+    });
+  </script>
+
 </body>
 </html>
+
 
 
